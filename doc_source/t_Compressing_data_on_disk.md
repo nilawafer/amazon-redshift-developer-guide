@@ -31,8 +31,14 @@ product_id int encode raw,
 product_name char(20) encode bytedict);
 ```
 
-You cannot change the compression encoding for a column after the table is created\. You can specify the encoding for a column when it is added to a table using the ALTER TABLE command\.
+You can specify the encoding for a column when it is added to a table using the ALTER TABLE command\.
 
 ```
 ALTER TABLE table-name ADD [ COLUMN ] column_name column_type ENCODE encoding-type
+```
+
+To change the compression encoding for a column after the table is created, use the ALTER TABLE command\.
+
+```
+ALTER TABLE table-name ALTER [ COLUMN ] column_name ENCODE encoding-type
 ```
